@@ -1,13 +1,17 @@
-# Playdate Video Streaming
+# Unofficial Playdate Video Streaming
 
 **Real-time 1-bit video + audio streaming for the [Playdate](https://play.date), in pure C + Lua.**
+
+> ⚠️ **Unofficial / community project.** Not made, endorsed, or supported by Panic. "Playdate" is a
+> trademark of Panic Inc., used here only to describe what this works with. Provided as-is, no
+> warranty — use at your own risk.
 
 The Playdate's built-in video format (`.pdv`) has to be **fully present on disk** before it plays — there's no native way to play a film *as it downloads*. This is a small native engine that fixes that: it streams a custom `.rwlpv` file over HTTP(S), decoding and playing the picture and sound **as the bytes arrive**.
 
 It was built for the daily-gift app *[Read Watch Listen Play](https://jontomato.itch.io/read-watch-listen-plan)*, and pulled out here so anyone can use it. **Contributions very welcome** — see [Contributing](#contributing).
 
 > 🔊 **Streaming audio too?** There's a companion engine with the same design:
-> **[playdate-audio-streaming](https://github.com/jnemargut/playdate-audio-streaming)** (on-demand
+> **[playdate-audio-streaming](https://github.com/jnemargut/unofficial-playdate-audio-streaming)** (on-demand
 > MP3 over HTTP, plus live internet radio). See [Using both together](#using-both-together) — a
 > `.pdx` may export only one `eventHandler`.
 
@@ -113,7 +117,7 @@ python3 tools/encode-stream-video.py <input|url> --out clip.rwlpv [--fps 6] [--s
 ## Using both together
 
 This engine ships `streamvideo_entry.c`, which defines the `eventHandler` the runtime
-needs. The companion [audio engine](https://github.com/jnemargut/playdate-audio-streaming)
+needs. The companion [audio engine](https://github.com/jnemargut/unofficial-playdate-audio-streaming)
 defines its own `eventHandler` too — but a `.pdx` may export only **one**. To use both,
 make the **audio** engine's handler the single entry point and add this engine's two hooks
 to it (the audio repo marks the exact spots with `// + video engine:` comments), then **do
