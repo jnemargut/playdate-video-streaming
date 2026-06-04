@@ -4,7 +4,7 @@
 
 The Playdate's built-in video format (`.pdv`) has to be **fully present on disk** before it plays — there's no native way to play a film *as it downloads*. This is a small native engine that fixes that: it streams a custom `.rwlpv` file over HTTP(S), decoding and playing the picture and sound **as the bytes arrive**.
 
-It was built for the daily-gift app *Read Watch Listen Play*, and pulled out here so anyone can use it. **Contributions very welcome** — see [Contributing](#contributing).
+It was built for the daily-gift app *[Read Watch Listen Play](https://jontomato.itch.io/read-watch-listen-plan)*, and pulled out here so anyone can use it. **Contributions very welcome** — see [Contributing](#contributing).
 
 > 🔊 **Streaming audio too?** There's a companion engine with the same design:
 > **[playdate-audio-streaming](https://github.com/jnemargut/playdate-audio-streaming)** (on-demand
@@ -132,6 +132,14 @@ Read these before you build a UI around it:
 - **Memory.** A 128 KB audio ring + 32 frame slots (~384 KB) live in the engine; budget `HEAP_SIZE` accordingly.
 - **Tested on Playdate hardware (rev A) + Simulator.** Different content and networks will find edges — please report them.
 
+## In the wild
+
+Apps shipping this engine:
+
+- **[Read Watch Listen Play](https://jontomato.itch.io/read-watch-listen-plan)** — a daily four-part gift for Playdate (read a story, watch a dithered short film, hear a radio play, solve a crossword). The Watch pillar streams its films with this.
+
+Using it in your game? Open a PR adding it here.
+
 ## Contributing
 
 This exists because streaming video on the Playdate *shouldn't* require everyone to reinvent it. If you make it better, send it back so the next person benefits. Issues and PRs are genuinely welcome — including rough ones.
@@ -149,6 +157,6 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the (short) details.
 
 ## Credits & license
 
-- Built by **[jnemargut](https://github.com/jnemargut)** for *Read Watch Listen Play*.
+- Built by **[jnemargut](https://github.com/jnemargut)** for *[Read Watch Listen Play](https://jontomato.itch.io/read-watch-listen-plan)*.
 - MP3 decoding by [minimp3](https://github.com/lieff/minimp3) (CC0 / public domain), vendored in `src/`.
 - This project is **MIT licensed** — see [`LICENSE`](LICENSE). Use it, ship it, sell your game with it; just keep the notice.
