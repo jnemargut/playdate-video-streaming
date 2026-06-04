@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 encode-stream-video.py — turn a video into a streamable .rwlpv file for the
-Watch pillar's real-time streaming (Blippo-style).
+Watch pillar's real-time streaming.
 
 Unlike .pdv (which needs the whole file + a frame table before frame one), .rwlpv
 is a *stream*: a tiny header followed by interleaved, self-delimiting packets of
